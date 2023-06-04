@@ -14,26 +14,43 @@ cite {font-style:normal;}
 fieldset{border-width:0; padding:0; margin:0;}
 
 body{
-    border: solid 1px red;
     display: grid;
+    justify-content: center;
+    align-items: center;
+}
+main{
+    border: solid 1px red;
+    width: 100vw;
+    height: 90vh;
+    place-items: center;
+    padding:0 2rem;
+    margin: 1rem;
 }
 
 .select-section{
-  
+    gap: 1rem;
     display: flex;
+    height: 20px;
+    align-items: center;
+    margin: 20px 0;
+    
 }
-
-
-.colorbox{
-    font-size: 20px;
-    width: 150px;
-    height: 50px;
-    color: rgb(255, 51, 0);
-    padding:20rem;
-    background-color: bisque;
-}
-
 
 .colorplate{
-    display: flex;
+    display: grid;
+    grid-auto-flow: column;
+    width: auto;
+    grid-template-columns: repeat(4,25%);
+    height: 90%;
+    grid-column-gap:10px;
+    text-align: center;
+    border:solid 2px yellow;
+
+}
+
+.colorbox{
+    border: 1px blue solid;
+    color: rgb(255, 51, 0); 
+    background-color: bisque;
+    height: 95%;
 }
