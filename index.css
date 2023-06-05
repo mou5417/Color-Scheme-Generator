@@ -19,7 +19,7 @@ body{
     align-items: center;
 }
 main{
-    border: solid 1px red;
+    
     width: 100vw;
     height: 90vh;
     place-items: center;
@@ -42,15 +42,15 @@ main{
     width: auto;
     grid-template-columns: repeat(4,25%);
     height: 90%;
-    grid-column-gap:10px;
+    grid-column-gap:5px;
     text-align: center;
-    border:solid 2px yellow;
+  
 
 }
 
 .colorbox{
-    border: 1px blue solid;
-    color: rgb(255, 51, 0); 
+   
+   
     background-color: bisque;
     height: 95%;
 }
