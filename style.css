@@ -2,55 +2,90 @@
 
 *,
 *::before,
-*::after{box-sizing:border-box;}
-a{text-decoration:none; color:inherit; cursor:pointer;}
-button{background-color:transparent; color:inherit; border-width:0; padding:0; cursor:pointer;}
-figure{margin:0;}
-input::-moz-focus-inner {border:0; padding:0; margin:0;}
-ul, ol, dd{margin:0; padding:0; list-style:none;}
-h1, h2, h3, h4, h5, h6{margin:0; font-size:inherit; font-weight:inherit;}
-p{margin:0;}
-cite {font-style:normal;}
-fieldset{border-width:0; padding:0; margin:0;}
-
-body{
-    display: grid;
-    justify-content: center;
-    align-items: center;
+*::after {
+  box-sizing: border-box;
 }
-main{
-    
-    width: 100vw;
-    height: 90vh;
-    place-items: center;
-    padding:0 2rem;
-    margin: 1rem;
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+button {
+  background-color: transparent;
+  color: inherit;
+  border-width: 0;
+  padding: 0;
+  cursor: pointer;
+}
+figure {
+  margin: 0;
+}
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+ul,
+ol,
+dd {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-size: inherit;
+  font-weight: inherit;
+}
+p {
+  margin: 0;
+}
+cite {
+  font-style: normal;
+}
+fieldset {
+  border-width: 0;
+  padding: 0;
+  margin: 0;
 }
 
-.select-section{
-    gap: 1rem;
-    display: flex;
-    height: 20px;
-    align-items: center;
-    margin: 20px 0;
-    
+body {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+main {
+  width: 100vw;
+  height: 90vh;
+  place-items: center;
+  padding: 0 2rem;
+  margin: 1rem;
 }
 
-.colorplate{
-    display: grid;
-    grid-auto-flow: column;
-    width: auto;
-    grid-template-columns: repeat(4,25%);
-    height: 90%;
-    grid-column-gap:5px;
-    text-align: center;
-  
-
+.select-section {
+  gap: 1rem;
+  display: flex;
+  height: 20px;
+  align-items: center;
+  margin: 20px 0;
 }
 
-.colorbox{
-   
-   
-    background-color: bisque;
-    height: 95%;
+.colorplate {
+  display: grid;
+  grid-auto-flow: column;
+  width: auto;
+  grid-template-columns: repeat(4, 25%);
+  height: 90%;
+  grid-column-gap: 5px;
+  text-align: center;
+}
+
+.colorbox {
+  width: 100%;
+  height: 95%;
 }
