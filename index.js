@@ -28,7 +28,7 @@ function render(colorschemes, count) {
   for (let i = 0; i < count; i++) {
     html += ` <figure>
         <div class="colorbox" id="colorbox${i}"> </div>    
-        <figcaption id ="figcaption${i}">test</figcaption>
+        <figcaption id ="figcaption${i}">no value</figcaption>
         </figure>`;
   }
 
