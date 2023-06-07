@@ -2,15 +2,16 @@ const seedColor = document.getElementById("seedcolor");
 const colorPlateEl = document.getElementById("colorplate");
 seedColor.addEventListener("change", (e) => {
   const colorValue = seedColor.value;
-  const r = parseInt(colorValue.substring(1, 2), 16);
-  const g = parseInt(colorValue.substring(3, 2), 16);
-  const b = parseInt(colorValue.substring(5, 2), 16);
+  const r = parseInt(colorValue.substring(1, 3), 16);
+  const g = parseInt(colorValue.substring(3, 5), 16);
+  const b = parseInt(colorValue.substring(5, 7), 16);
   const colorRGB = r.toString() + "," + g.toString() + "," + b.toString();
   getScheme(colorRGB);
 });
 
 function getScheme(color) {
-  let count = 6;
+  let count = document.getElementById("count").value;
+  document.querySelector(":root").style.setProperty("--var-count--", count);
   fetch(`https://www.thecolorapi.com/scheme?rgb=${color}&count=6`)
     .then((res) => res.json())
     .then((data) => {
@@ -18,7 +19,6 @@ function getScheme(color) {
       for (i in data.colors) {
         colorschemes[data.colors[i].name.value] = data.colors[i].rgb.value;
       }
-
       render(colorschemes, count);
     });
 }
@@ -28,7 +28,7 @@ function render(colorschemes, count) {
   for (let i = 0; i < count; i++) {
     html += ` <figure>
         <div class="colorbox" id="colorbox${i}"> </div>    
-        <figcaption>test</figcaption>
+        <figcaption id ="figcaption${i}">test</figcaption>
         </figure>`;
   }
 
@@ -38,6 +38,6 @@ function render(colorschemes, count) {
   keys.forEach((key, index) => {
     document.getElementById(`colorbox${index}`).style.backgroundColor =
       colorschemes[key];
-    document.getElementById(`colorbox${index}`).textContent = key;
+    document.getElementById(`figcaption${index}`).innerText = key;
   });
 }
