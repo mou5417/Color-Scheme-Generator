@@ -11,8 +11,8 @@ seedColor.addEventListener("change", (e) => {
 
 function getScheme(color) {
   let count = document.getElementById("count").value;
-  document.querySelector(":root").style.setProperty("--var-count--", count);
-  fetch(`https://www.thecolorapi.com/scheme?rgb=${color}&count=6`)
+  document.documentElement.style.setProperty("--var-count--", count);
+  fetch(`https://www.thecolorapi.com/scheme?rgb=${color}&${count}`)
     .then((res) => res.json())
     .then((data) => {
       let colorschemes = {};
