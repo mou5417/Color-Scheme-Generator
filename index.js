@@ -17,6 +17,12 @@ seedColor.addEventListener("change", (e) => {
 function getScheme(color) {
   let count = schemecounts.value;
   document.documentElement.style.setProperty("--var-count--", count);
+  let widthEl = document.querySelector("body");
+  let width = getComputedStyle(widthEl);
+  let elWidth = parseInt(width.width, 10) / count;
+
+  document.documentElement.style.setProperty("--var-width--", elWidth + "px");
+  console.log();
   fetch(`https://www.thecolorapi.com/scheme?rgb=${color}&${count}`)
     .then((res) => res.json())
     .then((data) => {
@@ -28,12 +34,13 @@ function getScheme(color) {
     });
 }
 // 取得顏色value 要往回設定HTML
-function render(colorschemes, count) {
+function render(colorschemes, count, elWidth) {
   let html = "";
+
   for (let i = 0; i < count; i++) {
     html += ` <figure>
                 <div class="figcaption">
-                  <figcaption id ="figcaption${i}">no value
+                  <figcaption id ="figcaption${i}" ">no value
                   </figcaption> 
                 </div>
                 <div class="colorbox" id="colorbox${i}">
@@ -42,8 +49,9 @@ function render(colorschemes, count) {
   }
 
   colorPlateEl.innerHTML = html;
-  let keys = Object.keys(colorschemes);
-  console.log(keys);
+
+  let keys = Object.keys(colorschemes); //get colorbox number
+
   keys.forEach((key, index) => {
     document.getElementById(`colorbox${index}`).style.backgroundColor =
       colorschemes[key];

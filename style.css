@@ -1,7 +1,9 @@
 @import url(normalize.css);
 :root {
-  --var-count--: 2;
+  --var-count--: 1;
+  --var-width--: 1;
 }
+
 *,
 *::before,
 *::after {
@@ -65,7 +67,8 @@ body {
   display: grid;
   justify-content: center;
   height: 100vh;
-  width: 90vw;
+  width: 80vw;
+  margin: 2rem;
 }
 main {
   width: 100%;
@@ -86,9 +89,8 @@ main {
 .colorplate {
   display: grid;
   grid-auto-flow: column;
-  width: 80%;
-
-  grid-template-columns: repeat(var(--var-count--), 1fr);
+  /* width: 80%; */
+  grid-template-columns: repeat(var(--var-count--), var(--var-width--));
   height: 80%;
   grid-column-gap: 5px;
   text-align: center;
