@@ -1,16 +1,21 @@
 const seedColor = document.getElementById("seedcolor");
 const colorPlateEl = document.getElementById("colorplate");
+const schemecounts = document.getElementById("count");
+let colorRGB = "";
+schemecounts.addEventListener("change", (e) => {
+  getScheme(colorRGB);
+});
 seedColor.addEventListener("change", (e) => {
   const colorValue = seedColor.value;
   const r = parseInt(colorValue.substring(1, 3), 16);
   const g = parseInt(colorValue.substring(3, 5), 16);
   const b = parseInt(colorValue.substring(5, 7), 16);
-  const colorRGB = r.toString() + "," + g.toString() + "," + b.toString();
+  colorRGB = r.toString() + "," + g.toString() + "," + b.toString();
   getScheme(colorRGB);
 });
 
 function getScheme(color) {
-  let count = document.getElementById("count").value;
+  let count = schemecounts.value;
   document.documentElement.style.setProperty("--var-count--", count);
   fetch(`https://www.thecolorapi.com/scheme?rgb=${color}&${count}`)
     .then((res) => res.json())
@@ -27,9 +32,9 @@ function render(colorschemes, count) {
   let html = "";
   for (let i = 0; i < count; i++) {
     html += ` <figure>
-        <div class="colorbox" id="colorbox${i}"> </div>    
         <figcaption id ="figcaption${i}">no value</figcaption>
-        </figure>`;
+        <div class="colorbox" id="colorbox${i}"> </div>    
+         </figure>`;
   }
 
   colorPlateEl.innerHTML = html;
