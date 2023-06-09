@@ -32,9 +32,13 @@ function render(colorschemes, count) {
   let html = "";
   for (let i = 0; i < count; i++) {
     html += ` <figure>
-        <figcaption id ="figcaption${i}">no value</figcaption>
-        <div class="colorbox" id="colorbox${i}"> </div>    
-         </figure>`;
+                <div class="figcaption">
+                  <figcaption id ="figcaption${i}">no value
+                  </figcaption> 
+                </div>
+                <div class="colorbox" id="colorbox${i}">
+                </div>  
+              </figure>`;
   }
 
   colorPlateEl.innerHTML = html;
